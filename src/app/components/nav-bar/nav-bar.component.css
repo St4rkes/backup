@@ -1,0 +1,34 @@
+/* styles.css */
+
+/* Estilos para a Navbar */
+.mat-toolbar {
+    background-color: #F9CF38;
+    color: #003A69;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    user-select: none;
+}
+
+.mat-toolbar span {
+    position: relative; /* Mantém a posição relativa para que a pseudo-classe ::after possa ser posicionada corretamente */
+    padding: 0;
+}
+
+.mat-toolbar span::after {
+    content: "";
+    display: block;
+    width: 0; /* Inicialmente, a barra de sublinhado não tem largura */
+    height: 4px; /* Define a altura da barra de sublinhado */
+    background-color: blue; /* Define a cor da barra de sublinhado */
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: 0; /* Posiciona a barra de sublinhado abaixo do item */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.mat-toolbar span.active::after {
+    width: auto; /* Ajusta a largura para que a barra de sublinhado se ajuste ao conteúdo do item quando ativo */
+}
